@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>上传资料</title>
+    <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../mui/css/mui.css">
+    <script src="../layui/lay/modules/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="../Hui/css/Hui.css">
+    <script src="../layui/layui.js" charset="utf-8"></script>
+    <script src="../Hui/script/H.js"></script>
+    <script src="../mui/js/mui.min.js"></script>
+    <style>
+        .tishi {
+            display: inline-block;
+            margin-top: .625em;
+        }
+        .radius {
+            border-radius: 5px !important;
+        }
+    </style>
+</head>
+<body>
+<div style="height: 2.5em;font-size: .8em;padding-left: .6em;display: flex;justify-content: space-between;align-items: center;">
+    <span>基础资料</span>
+</div>
+<div style="height:23.75em;display: flex;flex-flow: row wrap;padding: 1em 1em 0px;text-align: center;background-color: #fff;">
+    <div style="width: 11.375em;height: 10.3125em;">
+        <div style="width: 100%;height: 7.875em;background: url(../images/icon/camera.png) 50% center / 32px 27px no-repeat, url(../images/image/card_front.png) 50% center / 100% 100% no-repeat, 0px 0px;display: block;"></div>
+        <span class="tishi">身份证正面</span>
+        <input class="uploader-input" name="photo" onchange="getData(this)" type="file">
+    </div>
+    <div style="width: 11.375em;height: 10.3125em;margin-left: 0.9375em;">
+        <div style="width: 100%;height: 7.875em;background: url(../images/icon/camera.png) 50% center / 32px 27px no-repeat, url(../images/image/card_bsf.png) 50% center / 100% 100% no-repeat, 0px 0px;display: block;"></div>
+        <span class="tishi">身份证背面</span>
+
+    </div>
+    <div style="width: 11.375em;height: 10.3125em;">
+        <div style="width: 100%;height: 7.875em;background: url(../images/icon/camera.png) 50% center / 32px 27px no-repeat, url(../images/image/book.png) 50% center / 100% 100% no-repeat, 0px 0px;display: block;"></div>
+        <span class="tishi">户口本户主页</span>
+    </div>
+    <div style="width: 11.375em;height: 10.3125em;margin-left: 0.9375em;">
+        <div style="width: 100%;height: 7.875em;background: url(../images/icon/camera.png) left 50% top 50% / 32px 27px no-repeat rgb(245, 250, 255);display: block;"></div>
+        <span class="tishi">户口本其他页</span>
+    </div>
+</div>
+<div style="height: 2.5em;font-size: .8em;padding-left: .6em;display: flex;justify-content: space-between;align-items: center;">
+    <span>采购资料</span>
+</div>
+<div  class="H-theme-background-color-white" style="height: 11.6875em;display: flex;flex-flow: row wrap;padding: 1em 1em 0px;text-align: center;">
+    <div style="width: 7.1875em;height: 8.625em;">
+        <div style="width: 100%;height: 115px;background: url(../images/icon/camera.png) 50% center / 32px 27px no-repeat, 50% center rgb(245, 250, 255);display: block;"></div>
+        <span class="tishi">付款收据</span>
+    </div>
+    <div style="width: 7.1875em;height: 8.625em;margin-left: 1em;">
+        <div style="width: 100%;height: 115px;background: url(../images/icon/camera.png) 50% center / 32px 27px no-repeat, 50% center rgb(245, 250, 255);display: block;"></div>
+        <span class="tishi">安装协议</span>
+    </div>
+    <div style="width: 7.1875em;height: 8.625em;margin-left: 1em;">
+        <div style="width: 100%;height: 115px;background: url(../images/icon/camera.png) 50% center / 32px 27px no-repeat, 50% center rgb(245, 250, 255);display: block;"></div>
+        <span class="tishi">其他上传</span>
+    </div>
+</div>
+<button onclick="tan()" id="btn" class="H-button H-width-100-percent  H-font-size-15 H-outline-none H-theme-font-color-white H-theme-font-color6-click H-border-radius-3" style="display:block;width: 19.0625em;font-size: 1.125em;height: 2.8125em;line-height: 1.8125em;margin: 1.8em auto 0px;background-color: #0D68CE;border: 1px solid #0D68CE;">保存</button>
+<div id="kuang" style="display: none;width: 16.875em;height: 12.0625em;text-align: center;background-color: #fff;padding-top: 2em;border-radius: 5px;">
+    <img style="width: 4.1875em; height: 4.3125em; display: block;margin: 0 auto;" src="../images/image/ok.png" alt="">
+    <span style="font-size: 1.1875em;margin-top: 1.8125em; display: inline-block;">提交成功！</span>
+</div>
+</body>
+<script>
+    layui.use('layer',function(){
+        var layer=layui.layer;
+
+    })
+    function tan() {
+        //捕获页
+
+        layer.open({
+            type: 1,
+            shade: false,
+            closeBtn:false,
+            skin: 'radius',
+            title: false, //不显示标题
+            content: $('#kuang'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        });
+    }
+    function getData(doc) {
+        var img=document.getElementById("img");
+        img.setAttribute("background-image",window.URL.createObjectURL(doc.files[0]));
+    }
+</script>
+</html>

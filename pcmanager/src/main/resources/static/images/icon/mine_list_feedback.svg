@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="56px" height="56px" viewBox="0 0 56 56" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icon/mine_Feedback</title>
+    <desc>Created with Sketch.</desc>
+    <g id="2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="我的" transform="translate(-30.000000, -587.000000)" fill="#94BDE8" fill-rule="nonzero">
+            <g id="list6" transform="translate(0.000000, 564.000000)">
+                <g id="icon" transform="translate(30.000000, 23.000000)">
+                    <path d="M46,22.276354 L31.1426679,30.2461197 C29.5273852,31.1125892 27.5865986,31.1174103 25.9670311,30.2589764 L10,21.7958278 L10,15.5 C10,14.1192881 11.1192881,13 12.5,13 L43.5,13 C44.8807119,13 46,14.1192881 46,15.5 L46,22.276354 Z M46,25.680721 L46,40.5 C46,41.8807119 44.8807119,43 43.5,43 L12.5,43 C11.1192881,43 10,41.8807119 10,40.5 L10,25.1911882 L24.5620696,32.9096524 C27.0650376,34.2363229 30.064435,34.2288721 32.560781,32.889783 L46,25.680721 Z" id="icon/mine_Feedback"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

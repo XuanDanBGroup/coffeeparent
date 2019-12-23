@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icon/shebei_default</title>
+    <desc>Created with Sketch.</desc>
+    <g id="2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-369.000000, -206.000000)">
+            <g id="icon/shebei_default" transform="translate(369.000000, 206.000000)">
+                <rect id="Rectangle-26" fill="#939393" fill-rule="nonzero" opacity="0" x="0" y="0" width="44" height="44"></rect>
+                <path d="M5,34 L39,34 C40.6568542,34 42,35.3431458 42,37 C42,38.6568542 40.6568542,40 39,40 L5,40 C3.34314575,40 2,38.6568542 2,37 C2,35.3431458 3.34314575,34 5,34 Z M5,26 L39,26 C40.6568542,26 42,27.3431458 42,29 C42,30.6568542 40.6568542,32 39,32 L5,32 C3.34314575,32 2,30.6568542 2,29 C2,27.3431458 3.34314575,26 5,26 Z M6,4 L38,4 C40.209139,4 42,5.790861 42,8 L42,20 C42,22.209139 40.209139,24 38,24 L6,24 C3.790861,24 2,22.209139 2,20 L2,8 C2,5.790861 3.790861,4 6,4 Z M9,11 C7.8954305,11 7,11.8954305 7,13 L7,15 C7,16.1045695 7.8954305,17 9,17 L17,17 C18.1045695,17 19,16.1045695 19,15 L19,13 C19,11.8954305 18.1045695,11 17,11 L9,11 Z" id="形状结合" fill="#BFCAD9"></path>
+            </g>
+        </g>
+    </g>
+</svg>

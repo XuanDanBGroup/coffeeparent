@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>淇滨区乡镇统计</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../mui/css/mui.css">
+    <link rel="stylesheet" href="../mui/css/mui.picker.css">
+    <link rel="stylesheet" href="../mui/css/mui.dtpicker.css">
+    <link rel="stylesheet" href="../mui/css/mui.poppicker.css">
+    <link rel="stylesheet" href="../Hui/css/Hui.css">
+    <link rel="stylesheet" href="../css/X.css">
+    <style>
+        #date1,#date2 {
+            border: 0;
+            display: inline-block;
+            width: 5.5em;
+            background-color: rgb(243,243,243);
+        }
+    </style>
+</head>
+<body>
+<div style="height: 49px; background-color: rgb(243, 243, 243);">
+    <div style="height: 49px; line-height: 49px; text-align: center;">
+        <input type='text' class="font mui-left" placeholder="请选择" id="date1" readonly="true">
+        &nbsp;~ &nbsp;
+        <input type='text' class="font mui-left" placeholder="请选择" id="date2" readonly="true">
+        <img style="width: 10px; height: 7px; margin-left: 7px;" src="../images/time_arrow_blue.png" alt="">
+        <div style="width: 57px; height: 30px; background: rgb(13, 104, 206); border-radius: 0px 55px 55px 0px; float: left; margin-top: 8px;line-height: 1.9;">
+            <span style="color: rgb(255, 255, 255); font-size: 15px;">图表</span>
+        </div>
+    </div>
+</div>
+<div id="container" style="height: 30rem;"></div>
+
+
+</body>
+<script src="../layui/lay/modules/jquery-3.3.1.min.js"></script>
+<script src="../mui/js/mui.min.js"></script>
+<script src="../mui/js/mui.picker.js"></script>
+<script src="../mui/js/mui.dtpicker.js"></script>
+<script src="../mui/js/mui.poppicker.js"></script>
+<script src="../echarts/echarts.js"></script>
+<script>
+    $(function () {
+
+        $("#date1").val(getNowFormatDate());
+        $("#date2").val(getNowFormatDate());
+        $("#date1").click(function () {
+            var datePicker=new mui.DtPicker({
+                type:'date',//若只显示年月日，类型为date，
+            });
+            datePicker.show(function(selectItems){
+                $("#date1").val(selectItems);
+            });
+
+        });
+        $("#date2").click(function () {
+            var datePicker=new mui.DtPicker({
+                type:'date',//若只显示年月日，类型为date，
+            });
+            datePicker.show(function(selectItems){
+                $("#date2").val(selectItems);
+            });
+
+        });
+    });
+    function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
+</script>
+<script>
+    var dom = document.getElementById("container");
+    var myChart = echarts.init(dom);
+
+    option = {
+        title : {
+            text: '淇滨区乡镇统计',
+            x:'center'
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: function(params) {
+                var res = params+'<br/>指标值：'+params;
+                var datas = option.series.data;
+                for (var i = 0; i < datas.length; i++) {
+                    if(params == datas[i].name){
+                        res = res + '<br/>环比：'+datas[i].kpi_mom;
+                        break;
+                    }
+                }·
+                return res;
+            }
+        },
+        legend: {
+            type: 'scroll',
+            orient: 'vertical',
+            right: 10,
+            top: 20,
+            bottom: 20,
+            data: ['乡镇1','乡镇2','乡镇3','乡镇4','乡镇5'],
+
+        },
+        series : [
+            {
+                name: '总台数',
+                type: 'pie',
+                radius : '55%',
+                center: ['40%', '50%'],
+                data: [1,2,3,4,5],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            },
+            {
+                name: '热风机',
+                type: 'pie',
+                radius : '55%',
+                center: ['40%', '50%'],
+                data: [7,8,9,10,11],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            },
+            {
+                name: '生物质',
+                type: 'pie',
+                radius : '55%',
+                center: ['40%', '50%'],
+                data: [12,13,14,15,16],
+                itemStyle: {
+                    emphasis: {
+                        shadowBlur: 10,
+                        shadowOffsetX: 0,
+                        shadowColor: 'rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        ]
+    };
+
+    myChart.setOption(option)
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,109 @@
+body{
+	padding: 0px;
+	margin: 0px;
+}
+
+header{
+	height: 60px;
+	background: white;
+	display: flex;
+	align-items: center;
+}
+
+.logo{
+	height: 40px;
+	margin-left: 100px;
+	display: flex;
+	align-items: center;
+}
+
+.logo img{
+	height: 100%;
+}
+
+.logo div{
+	margin-left: 20px;
+	font-size: 18px;
+	font-weight: 600;
+}
+
+.container{
+	background: url(../images/bg@2x.png) no-repeat center;
+	background-size: 100%;
+	width: 100%;
+	height: calc(100vh - 60px);
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+.login_model{
+	width: 380px;
+	height: 390px;
+	background: white;
+	margin-right: 200px;
+	border-radius: 5px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	padding: 0 40px;
+	text-align: center;
+	box-sizing: border-box;
+	position: relative;
+}
+
+.login_model>div{
+	line-height: 75px;
+	width: 100%;
+}
+
+.login_model>div input{
+	width: 100%;
+	padding: 0 10px;
+	margin: 0;
+	border: 1px solid #D7D8DA;
+	height: 46px;
+	outline: none;
+	box-sizing: border-box;
+	border-radius: 4px;
+}
+
+.login_model>div input::-webkit-input-placeholder{
+	color: #999999;
+}
+.login_model>div button{
+	width: 100%;
+	height: 46px;
+	color: white;
+	background: #0D68CE;
+	border: 0;
+	border-radius: 4px;
+	margin-top: 30px;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.login_model .title{
+	font-size: 26px;
+	color: #333943;
+	letter-spacing: 2px;
+	font-weight: 600;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.login_model .title img{
+	width: 40px;
+	position: relative;
+	top: 2px;
+	margin-right: 5px;
+}
+
+.login_model .text{
+	position: absolute;
+	top: 400px;
+	font-size: 14px;
+	color: #80A9F6;
+}

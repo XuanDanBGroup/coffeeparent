@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>采购信息</title>
+    <link rel="stylesheet" href="../layui/css/layui.css"  media="all">
+    <link rel="stylesheet" href="../mui/css/mui.css">
+    <link rel="stylesheet" href="../css/X.css">
+    <link rel="stylesheet" href="../Hui/css/Hui.css">
+    <style>
+        html body {
+            background-color: rgb(244,245,249);
+        }
+        .layui-tab-brief>.layui-tab-title .layui-this {
+            color: #0D68CE;
+        }
+        .layui-tab-brief>.layui-tab-more li.layui-this:after, .layui-tab-brief>.layui-tab-title .layui-this:after {
+            border: none;
+            border-radius: 0;
+            border-bottom: 2px solid #0D68CE;
+        }
+        .x-tab>li {
+            margin-bottom: 1em;
+            font-size: .9em;
+        }
+        .H-tabs-active:after { border-left: 5px solid #5cb85c; border-right: 2px solid #fff; z-index: 100; }
+        .H-tabs-active:after {
+            display: none;
+        }
+        .H-theme-font-color9 {
+            color: #0D68CE;
+        }
+        .layui-tab {
+            margin: 0;
+            background-color: #fff;
+        }
+        .money {
+            width:2.5em;
+            height:0.8em;
+            font-size:18px;
+            font-family:Arial-BoldMT,Arial;
+            font-weight:600;
+            color:rgba(51,51,51,1);
+            line-height:.8em;
+        }
+        .money2 {
+            width:.5em;
+            height:.9em;
+            font-size:1.25em;
+            font-family:PingFangSC-Semibold,PingFangSC;
+            font-weight:600;
+            color:rgba(51,51,51,1);
+            line-height:.9em;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="layui-tab layui-tab-brief H-border-vertical-bottom-after" lay-filter="docDemoTabBrief">
+    <ul class="layui-tab-title" style="display: flex;justify-content: space-around;">
+        <li class="layui-this" style="width: 40%;">热风机</li>
+        <li style="width: 40%;">生物质炉具</li>
+    </ul>
+    <div class="layui-tab-content" style="height: auto;">
+        <div class="layui-tab-item layui-show" style="height: 11.5em;">
+            <div class="H-tabs-channel H-width-75 H-height-100-percent H-overflow-scrolling H-border-horizontal-right-after H-theme-background-color-f4f4f4" style="width: 17%;display: inline-block;">
+                <ul class="H-width-100-percent H-auto-height x-tab">
+
+
+                    <li tapmode="" class="H-channel-item H-tabs-active H-theme-font-color9 H-theme-background-color-white H-font-size-16  H-padding-10 H-text-show-row-1 H-font-weight-500 H-width-100-percent H-box-sizing-border-box">格力</li>
+                    <li tapmode="" class="H-channel-item H-font-size-16 H-padding-10 H-text-show-row-1 H-font-weight-500 H-width-100-percent H-box-sizing-border-box">美的</li>
+                    <li tapmode="" class="H-channel-item H-font-size-16 H-padding-10 H-text-show-row-1 H-font-weight-500 H-width-100-percent H-box-sizing-border-box">海尔</li>
+                </ul>
+            </div>
+            <div class="H-tabs-items H-theme-background-color-white H-flex-item H-height-100-percent H-overflow-scrolling" style="width: 81%;display: inline-block;">
+
+
+                <div class="H-tabs-item">
+                    <div style="display: flex;justify-content: space-between;align-items:center;margin-top: 2em;">
+                        <div style="width: 6.25em">40DZW(大)</div>
+                        <div><span class="money">1400</span>元</div>
+                        <div class="mui-numbox" data-numbox-min='0'>
+                            <!-- "-"按钮，点击可减小当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                            <input class="mui-numbox-input" type="number" />
+                            <!-- "+"按钮，点击可增大当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                        </div>
+                    </div>
+                    <div style="display: flex;justify-content: space-between;align-items:center;margin-top: 2em;">
+                        <div style="width: 6.25em">30DZW(小)</div>
+                        <div><span class="money">0</span>元</div>
+                        <div class="mui-numbox" data-numbox-min='0'>
+                            <!-- "-"按钮，点击可减小当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                            <input class="mui-numbox-input" type="number" />
+                            <!-- "+"按钮，点击可增大当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="H-tabs-item H-display-none-important">
+                    <div style="display: flex;justify-content: space-between;align-items:center;margin-top: 2em;">
+                        <div style="width: 6.25em">40DZW(大)</div>
+                        <div><span class="money">1400</span>元</div>
+                        <div class="mui-numbox" data-numbox-min='0'>
+                            <!-- "-"按钮，点击可减小当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                            <input class="mui-numbox-input" type="number" />
+                            <!-- "+"按钮，点击可增大当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                        </div>
+                    </div>
+                    <div style="display: flex;justify-content: space-between;align-items:center;margin-top: 2em;">
+                        <div style="width: 6.25em">30DZW(小)</div>
+                        <div><span class="money">0</span>元</div>
+                        <div class="mui-numbox" data-numbox-min='0'>
+                            <!-- "-"按钮，点击可减小当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                            <input class="mui-numbox-input" type="number" />
+                            <!-- "+"按钮，点击可增大当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="H-tabs-item H-display-none-important">
+                    <div style="display: flex;justify-content: space-between;align-items:center;margin-top: 2em;">
+                        <div style="width: 6.25em">40DZW(大)</div>
+                        <div><span class="money">1400</span>元</div>
+                        <div class="mui-numbox" data-numbox-min='0'>
+                            <!-- "-"按钮，点击可减小当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                            <input class="mui-numbox-input" type="number" />
+                            <!-- "+"按钮，点击可增大当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                        </div>
+                    </div>
+                    <div style="display: flex;justify-content: space-between;align-items:center;margin-top: 2em;">
+                        <div style="width: 6.25em">30DZW(小)</div>
+                        <div><span class="money">0</span>元</div>
+                        <div class="mui-numbox" data-numbox-min='0'>
+                            <!-- "-"按钮，点击可减小当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                            <input class="mui-numbox-input" type="number" />
+                            <!-- "+"按钮，点击可增大当前数值 -->
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layui-tab-item">
+            <div class="layui-tab-item layui-show" style="height: 11.5em;">
+                <div class="H-tabs-channel H-width-75 H-height-100-percent H-overflow-scrolling H-border-horizontal-right-after H-theme-background-color-f4f4f4" style="width: 17%;display: inline-block;">
+                    <ul class="H-width-100-percent H-auto-height x-tab">
+
+
+                        <li tapmode="" class="H-channel-item H-tabs-active H-theme-font-color9 H-theme-background-color-white H-font-size-16 H-text-show-row-1 H-font-weight-500 H-width-100-percent H-box-sizing-border-box" style="height: 3em;padding-top: .5em;">中能北方</li>
+                    </ul>
+                </div>
+                <div class="H-tabs-items H-theme-background-color-white H-flex-item H-height-100-percent H-overflow-scrolling" style="width: 81%;display: inline-block;">
+
+
+                    <div class="H-tabs-item">
+                        <div style="display: flex;justify-content: space-between;align-items:center;margin-top: 2em;">
+                            <div style="width: 6.25em">40DZW(大)</div>
+                            <div><span class="money">1400</span>元</div>
+                            <div class="mui-numbox" data-numbox-min='0'>
+                                <!-- "-"按钮，点击可减小当前数值 -->
+                                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                <input class="mui-numbox-input" type="number" />
+                                <!-- "+"按钮，点击可增大当前数值 -->
+                                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                            </div>
+                        </div>
+                        <div style="display: flex;justify-content: space-between;align-items:center;margin-top: 2em;">
+                            <div style="width: 6.25em">30DZW(小)</div>
+                            <div><span class="money">0</span>元</div>
+                            <div class="mui-numbox" data-numbox-min='0'>
+                                <!-- "-"按钮，点击可减小当前数值 -->
+                                <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                                <input class="mui-numbox-input" type="number" />
+                                <!-- "+"按钮，点击可增大当前数值 -->
+                                <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="height: 3.1em;background-color: #fff;display: flex;justify-content: space-between;padding: .5em;align-items: center;">
+    <div>共计 <span class="money2">2</span> 台</div>
+    <div><span class="money2" style="color: #F25A2F;">2200</span>元</div>
+</div>
+<div style="height: 2.5em;font-size: .8em;padding-left: .6em;display: flex;justify-content: space-between;align-items: center;">
+    <span>付款信息</span>
+</div>
+<div>
+    <div class="H-flexbox-horizontal H-border-vertical-bottom-after">
+        <span class="H-vertical-middle H-padding-horizontal-left-10 H-theme-background-color-white H-font-size-16 x-span">付款方式</span><input type="text" class="H-textbox H-vertical-align-middle H-vertical-middle H-font-size-16 H-flex-item H-box-sizing-border-box H-border-none H-outline-none H-padding-12" placeholder="请选择" readonly="readonly" tapmode="" onclick="H.selectTip(this, ['微信', '支付宝', '现金'])" /><span class="H-icon H-vertical-middle H-padding-horizontal-right-10 H-theme-background-color-white"><i class="H-iconfont H-icon-arrow-right H-font-size-16 H-vertical-middle H-theme-font-color-999"></i></span>
+    </div>
+    <div class="H-flexbox-horizontal H-border-vertical-bottom-after">
+        <span class="H-vertical-middle H-padding-horizontal-left-10 H-theme-background-color-white H-font-size-16 x-span">付款日期</span><input type="text" class="H-textbox H-vertical-align-middle H-vertical-middle H-font-size-16 H-flex-item H-box-sizing-border-box H-border-none H-outline-none H-padding-12" placeholder="请选择付款日期" readonly="readonly" tapmode="" onclick="H.dateTip(this);" /><span class="H-icon H-vertical-middle H-padding-horizontal-right-10 H-theme-background-color-white"><i class="H-iconfont H-icon-arrow-right H-font-size-16 H-vertical-middle H-theme-font-color-999"></i></span>
+    </div>
+    <div class="H-flexbox-horizontal H-border-vertical-bottom-after">
+        <span class="H-vertical-middle H-padding-horizontal-left-10 H-theme-background-color-white H-font-size-16 x-span">收据票号<span style="color:red">*</span></span><input type="text" class="H-textbox H-vertical-align-middle H-vertical-middle H-font-size-16 H-flex-item H-box-sizing-border-box H-border-none H-outline-none H-padding-12" placeholder="请输入收据编号" />
+    </div>
+    <div class="H-flexbox-horizontal H-border-vertical-bottom-after">
+        <span class="H-vertical-middle H-padding-horizontal-left-10 H-theme-background-color-white H-font-size-16 x-span">安装协议<span style="color:red">*</span></span><input type="text" class="H-textbox H-vertical-align-middle H-vertical-middle H-font-size-16 H-flex-item H-box-sizing-border-box H-border-none H-outline-none H-padding-12" placeholder="请输入安装协议" />
+    </div>
+</div>
+<button id="btn" class="H-button H-width-100-percent  H-font-size-15 H-outline-none H-theme-font-color-white H-theme-font-color6-click H-border-radius-3" style="display:block;width: 19.0625em;font-size: 1.125em;height: 2.8125em;line-height: 1.8125em;margin: 1.8em auto 0px;background-color: #0D68CE;border: 1px solid #0D68CE;">保存并下一步</button>
+
+
+
+
+
+<script src="../layui/layui.js" charset="utf-8"></script>
+<script src="../Hui/script/H.js"></script>
+<script src="../mui/js/mui.min.js"></script>
+<!-- 注意：如果你直接复制所有代码到本地，上述js路径需要改成你本地的 -->
+<script>
+    layui.use('element', function(){
+        var $ = layui.jquery
+            ,element = layui.element; //Tab的切换功能，切换事件监听等，需要依赖element模块
+    });
+    H.on(H.Ds(".H-tabs-channel ul li"), "touchend", function (event) {
+        var channel_item = H.getParents(event.target, "H-channel-item");
+        var index = H.getIndex(channel_item);
+        H.addClass(channel_item, "H-tabs-active H-theme-font-color9 H-theme-background-color-white");
+        H.removeClass(H.siblings(channel_item), "H-tabs-active H-theme-font-color9 H-theme-background-color-white");
+
+        var tab_item = H.D(".H-tabs-items .H-tabs-item:nth-child(" + (index + 1) + ")")
+        H.removeClass(tab_item, "H-display-none-important");
+        H.addClass(H.siblings(tab_item), "H-display-none-important");
+    });
+</script>
+
+</body>
+</html>

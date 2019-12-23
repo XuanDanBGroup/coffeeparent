@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icon/tongji_default</title>
+    <desc>Created with Sketch.</desc>
+    <g id="2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-465.000000, -206.000000)" fill-rule="nonzero">
+            <g id="icon/tongji_default备份" transform="translate(465.000000, 206.000000)">
+                <rect id="Rectangle-26" fill="#939393" opacity="0" x="0" y="0" width="44" height="44"></rect>
+                <g id="icon" transform="translate(1.000000, 2.000000)" fill="#BFCAD9">
+                    <path d="M19.5598715,20.4339447 C19.5543936,21.6172192 20.5322237,22.588488 21.7627189,22.6220107 L39,22.6220107 C38.7284455,32.7817437 30.1322415,40.9082818 19.5598715,41 C14.3424651,40.9790154 9.34811689,38.9635403 5.67867657,35.3982276 C2.00923626,31.8329149 -0.0337564909,27.0107474 0.000422040826,21.9955886 C-0.0313087523,16.9819534 2.01276672,12.1620566 5.68194216,8.59865631 C9.35111761,5.03525604 14.3440657,3.020993 19.5598715,3 L19.5598715,20.4339447 Z M42,20.5 L24.0569784,20.5 C22.4824295,20.4841285 21.7400278,19.8949065 21.7507416,18.3412348 L21.7507416,0 C32.7330811,1.5581467 40.567942,9.64382514 42,20.5 Z" id="形状结合"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="44px" height="44px" viewBox="0 0 44 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.2 (78181) - https://sketchapp.com -->
+    <title>icon/changjia_selected</title>
+    <desc>Created with Sketch.</desc>
+    <g id="2.0" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="画板" transform="translate(-753.000000, -142.000000)">
+            <g id="icon/changjia_selected" transform="translate(753.000000, 142.000000)">
+                <rect id="Rectangle-26" fill="#939393" fill-rule="nonzero" opacity="0" x="0" y="0" width="44" height="44"></rect>
+                <path d="M12.4384633,12 L2,12 L2,9 C2,7.34314575 3.34314575,6 5,6 L9.43846328,6 C11.0953175,6 12.4384633,7.34314575 12.4384633,9 L12.4384633,12 Z M12.4384633,14 L12.4384633,24.6669182 L20.4413027,17.0166662 C21.2397419,16.2534044 22.5057508,16.2819214 23.2690126,17.0803606 C23.3036518,17.1165963 23.3369164,17.1541215 23.3687359,17.1928566 L27.317632,22 L38.3877938,6.92046815 C39.0414505,6.03007125 40.2931533,5.83815544 41.1835502,6.49181218 C41.6968182,6.86861165 42,7.46729093 42,8.10401838 L42,38 C42,40.209139 40.209139,42 38,42 L6,42 C3.790861,42 2,40.209139 2,38 L2,14 L12.4384633,14 Z" id="形状结合" fill="#0D68CE"></path>
+            </g>
+        </g>
+    </g>
+</svg>

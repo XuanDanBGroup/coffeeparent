@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../mui/css/mui.css">
+    <link rel="stylesheet" href="../mui/css/mui.picker.css">
+    <link rel="stylesheet" href="../mui/css/mui.dtpicker.css">
+    <link rel="stylesheet" href="../mui/css/mui.poppicker.css">
+    <link rel="stylesheet" href="../Hui/css/Hui.css">
+    <link rel="stylesheet" href="../css/X.css">
+    <style>
+        html body {
+            background-color: #fff;
+            height: 100%;
+        }
+        #date1,#date2 {
+            border: 0;
+            display: inline-block;
+            width: 5.5em;
+            background-color: rgb(243,243,243);
+        }
+        .layui-table, .layui-table-view {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div style="height: 49px; background-color: rgb(243, 243, 243);">
+    <div style="height: 49px; line-height: 49px; text-align: center;">
+        <input type='text' class="font mui-left" placeholder="请选择" id="date1" readonly="true">
+        &nbsp;~ &nbsp;
+        <input type='text' class="font mui-left" placeholder="请选择" id="date2" readonly="true">
+        <img style="width: 10px; height: 7px; margin-left: 7px;" src="../images/time_arrow_blue.png" alt="">
+        <div style="width: 57px; height: 30px; background: rgb(13, 104, 206); border-radius: 0px 55px 55px 0px; float: left; margin-top: 8px;line-height: 1.9;">
+            <span style="color: rgb(255, 255, 255); font-size: 15px;">图表</span>
+        </div>
+    </div>
+</div>
+<div>
+    <table class="layui-hide" id="test" lay-filter="test"></table>
+</div>
+<div style="padding-bottom: 55px;"></div>
+<div style="width: 100%; height: 55px; background: rgb(234, 244, 255); opacity: 0.95; position: fixed; bottom: 0px; display: flex; justify-content: space-around; align-items: center;">
+    <span style="width: 30px; height: 15px; font-size: 15px; font-family: PingFang-SC; font-weight: 400; color: rgb(13, 104, 206); line-height: 15px;">
+        合计
+    </span>
+    <span style="width: 46px; height: 16px; font-size: 16px; font-family: Arial; font-weight: normal; color: rgb(13, 104, 206); line-height: 16px;">
+        14467
+    </span>
+    <span style="width: 46px; height: 16px; font-size: 16px; font-family: Arial; font-weight: normal; color: rgb(13, 104, 206); line-height: 16px;">
+        26146
+    </span>
+    <span style="width: 46px; height: 16px; font-size: 16px; font-family: Arial; font-weight: normal; color: rgb(13, 104, 206); line-height: 16px;">
+        14626
+    </span>
+</div>
+</body>
+<script src="../layui/lay/modules/jquery-3.3.1.min.js"></script>
+<script src="../layui/layui.js"></script>
+<script src="../layui/layui.all.js"></script>
+<script src="../mui/js/mui.min.js"></script>
+<script src="../mui/js/mui.picker.js"></script>
+<script src="../mui/js/mui.dtpicker.js"></script>
+<script src="../mui/js/mui.poppicker.js"></script>
+
+<script>
+    layui.use('table', function(){
+        var table = layui.table;
+
+        table.render({
+            elem: '#test'
+            ,url:'../json/table.json'
+            ,title: '用户数据表'
+            ,cols: [[
+                {field:'id', title:'ID', width:80, unresize: true, sort: true}
+                ,{field:'username', title:'用户名', width:120}
+                ,{field:'email', title:'邮箱', width:150, templet: function(res){
+                        return '<em>'+ res.email +'</em>'
+                    }}
+                ,{field:'sex', title:'性别', width:80, sort: true}
+                ,{field:'city', title:'城市', width:100}
+                ,{field:'sign', title:'签名'}
+                ,{field:'experience', title:'积分', width:80, sort: true}
+                ,{field:'ip', title:'IP', width:120}
+                ,{field:'logins', title:'登入次数', width:100, sort: true}
+                ,{field:'joinTime', title:'加入时间', width:120}
+            ]]
+            ,page: false
+        });
+
+
+
+
+
+    });
+
+</script>
+<script>
+    $(function () {
+
+        $("#date1").val(getNowFormatDate());
+        $("#date2").val(getNowFormatDate());
+        $("#date1").click(function () {
+            var datePicker=new mui.DtPicker({
+                type:'date',//若只显示年月日，类型为date，
+            });
+            datePicker.show(function(selectItems){
+                $("#date1").val(selectItems);
+            });
+
+        });
+        $("#date2").click(function () {
+            var datePicker=new mui.DtPicker({
+                type:'date',//若只显示年月日，类型为date，
+            });
+            datePicker.show(function(selectItems){
+                $("#date2").val(selectItems);
+            });
+
+        });
+    });
+    function getNowFormatDate() {
+        var date = new Date();
+        var seperator1 = "-";
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var strDate = date.getDate();
+        if (month >= 1 && month <= 9) {
+            month = "0" + month;
+        }
+        if (strDate >= 0 && strDate <= 9) {
+            strDate = "0" + strDate;
+        }
+        var currentdate = year + seperator1 + month + seperator1 + strDate;
+        return currentdate;
+    }
+</script>
+</html>

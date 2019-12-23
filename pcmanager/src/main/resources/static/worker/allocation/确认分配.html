@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>确认分配</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../css/X.css">
+    <link rel="stylesheet" href="../Hui/css/Hui.css">
+    <style>
+        .span {
+            display: inline-block;
+        }
+        html body {
+            background-color: rgb(243,243,243);
+        }
+        .tishi {
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<div style="width: auto;height: 161px;padding: 16px;background-color: rgb(255, 255, 255);border-bottom: 2px dashed rgb(243,243,243);">
+    <div style="display: flex;justify-content: space-between;align-items: center;">
+        <span class="span" style="font-size: 19px;">周敏</span>
+        <span class="span" style="font-size: 16px;">13329157564</span>
+        <span class="span x-blue" style="font-size: 13px; background-color: rgb(234, 244, 255); text-align: center; padding: 4px 6px; border-radius: 2px;">户主信息</span>
+    </div>
+    <div style="margin-top: 1.6875em;">
+        <span style="font-size: 15px;">河南省鹤壁市鹤山区新华街道东岭1号院02</span>
+    </div>
+    <div style="margin-top: 1.6875em;">
+        <span style="display: inline-block;float: right;">安装协议编号&nbsp;&nbsp;<span style="color: #0D68CE">XY-20184284</span></span>
+    </div>
+</div>
+<div class="x-font-26 H-padding-horizontal-left-10" style="height: 2.5em; line-height: 2.5em;">
+    <span style="font-size: 13px;">选择安装工人</span>
+</div>
+<div style="background-color: rgb(255, 255, 255); height: auto;padding-right: 0.5em;">
+    <div class="H-text-list H-flexbox-horizontal  H-theme-background-color-white H-border-vertical-bottom-after H-vertical-middle H-touch-active view">
+        <div class="H-flex-item H-padding-horizontal-both-10 x-font-28 H-padding-vertical-both-12" style="width: 16px; color: rgb(13, 104, 206);">张强</div>
+        <div class="H-flex-item x-color-666 tishi" style="width: 183px;">(待安装: 8户共10台设备)</div>
+        <input type="radio" name="a" checked="checked" class="H-radio H-radio-fill H-vertical-align-middle H-font-size-18 H-theme-font-color1 H-border-radius-circle">
+    </div>
+    <div class="H-text-list H-flexbox-horizontal  H-theme-background-color-white H-border-vertical-bottom-after H-vertical-middle H-touch-active view">
+        <div class="H-flex-item H-padding-horizontal-both-10 x-font-28 H-padding-vertical-both-12" style="width: 16px; color: rgb(13, 104, 206);">张强</div>
+        <div class="H-flex-item x-color-666 tishi" style="width: 183px;">(待安装: 8户共10台设备)</div>
+        <input type="radio" name="a" checked="checked" class="H-radio H-radio-fill H-vertical-align-middle H-font-size-18 H-theme-font-color1 H-border-radius-circle">
+    </div>
+    <div class="H-text-list H-flexbox-horizontal  H-theme-background-color-white H-border-vertical-bottom-after H-vertical-middle H-touch-active view">
+        <div class="H-flex-item H-padding-horizontal-both-10 x-font-28 H-padding-vertical-both-12" style="width: 16px; color: rgb(13, 104, 206);">张强</div>
+        <div class="H-flex-item x-color-666 tishi" style="width: 183px;">(待安装: 8户共10台设备)</div>
+        <input type="radio" name="a" checked="checked" class="H-radio H-radio-fill H-vertical-align-middle H-font-size-18 H-theme-font-color1 H-border-radius-circle">
+    </div>
+    <div class="H-text-list H-flexbox-horizontal  H-theme-background-color-white H-border-vertical-bottom-after H-vertical-middle H-touch-active view">
+        <div class="H-flex-item H-padding-horizontal-both-10 x-font-28 H-padding-vertical-both-12" style="width: 16px; color: rgb(13, 104, 206);">张强</div>
+        <div class="H-flex-item x-color-666 tishi" style="width: 183px;">(待安装: 8户共10台设备)</div>
+        <input type="radio" name="a" checked="checked" class="H-radio H-radio-fill H-vertical-align-middle H-font-size-18 H-theme-font-color1 H-border-radius-circle">
+    </div>
+</div>
+
+<button onclick="tan()" id="btn" class="H-button H-width-100-percent  H-font-size-15 H-outline-none H-theme-font-color-white H-theme-font-color6-click H-border-radius-3" style="display:block;width: 19.0625em;font-size: 1.125em;height: 2.8125em;line-height: 2.8125em;margin: 1.8em auto 0px;background-color: #0D68CE;border: 1px solid #0D68CE;">确认分配</button>
+<div id="kuang" style="display: none;width: 16.875em;height: 12.0625em;text-align: center;background-color: #fff;padding-top: 2em;border-radius: 5px;">
+    <img style="width: 4.1875em; height: 4.3125em; display: block;margin: 0 auto;" src="../images/image/ok.png" alt="">
+    <span style="font-size: 1.1875em;margin-top: 1.8125em; display: inline-block;">分配成功！</span>
+</div>
+</body>
+<script src="../layui/lay/modules/jquery-3.3.1.min.js"></script>
+<script src="../layui/layui.js"></script>
+<script src="../layui/layui.all.js"></script>
+<script>
+    layui.use('layer',function(){
+        var layer=layui.layer;
+
+    })
+    function tan() {
+        //捕获页
+
+        layer.open({
+            type: 1,
+            shade: false,
+            closeBtn:false,
+            skin: 'radius',
+            title: false, //不显示标题
+            content: $('#kuang'), //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+        });
+    }
+</script>
+</html>
