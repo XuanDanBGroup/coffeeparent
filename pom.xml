@@ -11,7 +11,9 @@
     <groupId>com.xuandan.bgroup</groupId>
     <artifactId>coffeeparent</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
     <name>coffeeparent</name>
+
     <description>Demo project for Spring Boot</description>
     <modules>
         <module>common</module>

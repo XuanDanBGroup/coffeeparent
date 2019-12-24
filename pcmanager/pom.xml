@@ -6,7 +6,6 @@
         <groupId>com.xuandan.bgroup</groupId>
         <artifactId>coffeeparent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.xuandan.bgroup</groupId>
     <artifactId>pcmanager</artifactId>
@@ -19,6 +18,12 @@
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.xuandan.bgroup</groupId>
+            <artifactId>common</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-freemarker</artifactId>
