@@ -66,7 +66,8 @@ public class ItemController {
     @RequestMapping("/doUpdateItem")
     public String doUpdateItem(Model model,Item item,@RequestParam("file") MultipartFile file,String ipic ) throws Exception{
        // System.out.println(file.getOriginalFilename().length());
-        if(file.getOriginalFilename().length()==0){
+
+        if(file.isEmpty()){//如果文件为空
             item.setIpic(ipic);
         }else {
             Response response = qnService.uploadFile(file.getInputStream());
