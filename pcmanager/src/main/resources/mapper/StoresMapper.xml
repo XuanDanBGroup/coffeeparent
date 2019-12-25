@@ -35,7 +35,7 @@
                 #{storeid},
             </if>
             <if test="sname != null" >
-                #{sname}
+                #{sname},
             </if>
             <if test="sphone != null" >
                 #{sphone},
