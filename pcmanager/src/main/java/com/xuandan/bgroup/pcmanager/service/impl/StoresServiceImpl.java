@@ -31,7 +31,7 @@ public class StoresServiceImpl implements StoresService {
 
     @Override
     public boolean updateStores(Stores stores) {
-        if(storesDao.updateStores(stores)>1){
+        if(storesDao.updateStores(stores)>0){
             return true;
         }
         return false;

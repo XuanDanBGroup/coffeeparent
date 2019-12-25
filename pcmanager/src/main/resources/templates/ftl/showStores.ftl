@@ -86,8 +86,8 @@
 
                     </td>
                     <td>
-                        <a href="toManagerUpdateStores?storeid=${stores.storeid}" class="btn btn-secondary btn-sm btn-icon icon-left">修改</a>
-                        <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" onclick="del(${stores.storeid})">删除</a>
+                        <a href="toManagerUpdateStores?storeid=${stores.storeid?string}" class="btn btn-secondary btn-sm btn-icon icon-left">修改</a>
+                        <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" onclick="del('${stores.storeid}')">删除</a>
                     </td>
                 </tr>
             </#list>

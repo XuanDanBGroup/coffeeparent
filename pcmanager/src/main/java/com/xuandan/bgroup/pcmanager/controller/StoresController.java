@@ -71,7 +71,7 @@ public class StoresController {
      */
      @RequestMapping("/toManagerUpdateStores")
     public String toManagerUpdateStores(HttpServletRequest request ,String storeid){
-         System.out.println(222);
+
         Stores stores=storesService.selOneStore(storeid);
         request.setAttribute("store" ,stores);
         return "ftl/managerUpdateStores";
@@ -110,8 +110,9 @@ public class StoresController {
     public  String updateStoresStatus(HttpServletRequest request ,String storeid){
         Stores stores=new Stores();
         stores.setStoreid(storeid);
-        stores.setStatus(2);
-        if(storesService.updateStores(stores)){
+        System.out.println(storeid);
+        stores.setStatus(0);
+        if(!storesService.updateStores(stores)){
             return "500";
         }
         request.setAttribute("info","删除成功");
