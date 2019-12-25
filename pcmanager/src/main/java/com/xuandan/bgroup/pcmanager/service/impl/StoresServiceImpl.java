@@ -22,7 +22,7 @@ public class StoresServiceImpl implements StoresService {
     public boolean addStores(Stores stores) {
         stores.setStoreid(IdWorker.getId());
         stores.setStatus(1);
-        System.out.println(stores);
+
        if(storesDao.addStores(stores)>0){
            return true;
        }
