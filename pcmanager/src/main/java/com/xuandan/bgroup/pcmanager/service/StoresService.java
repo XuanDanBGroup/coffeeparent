@@ -28,7 +28,7 @@ public interface StoresService {
      * @param storeid 店铺id
      * @return 1成功0失败
      */
-    boolean delStores(int storeid);
+    boolean delStores(String storeid);
 
     /**
      * 查询店铺信息 ，所有或按名称查询
@@ -41,5 +41,5 @@ public interface StoresService {
      * @param storeid 店铺id
      * @return 这个店铺全部信息
      */
-    Stores selOneStore(int storeid);
+    Stores selOneStore(String storeid);
 }
