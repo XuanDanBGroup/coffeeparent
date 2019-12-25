@@ -30,6 +30,11 @@ public class StoresController {
     private String path;
     @Autowired
     private StoresService storesService;
+    @RequestMapping("/toManagerAddStores")
+    public String toManagerAddStores(){
+        return "ftl/managerAddStores";
+    }
+
     @RequestMapping("/managerAddStores")
     public String managerAddStores(@RequestParam("file")MultipartFile file, Stores stores)throws IOException {
         Response response = qnService.uploadFile(file.getInputStream());

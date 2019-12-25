@@ -102,7 +102,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/addHousehold" target="home">
+                            <a href="/toManagerAddStores" target="home">
                                 <span class="title">商家添加</span>
                             </a>
                         </li>

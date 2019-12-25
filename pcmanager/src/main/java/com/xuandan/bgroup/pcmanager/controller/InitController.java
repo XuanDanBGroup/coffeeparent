@@ -19,10 +19,11 @@ public class InitController {
     @RequestMapping("/loginManager")
     public String loginManger(String username,String password ){
         if(username.equals("admin")&&password.equals("123456")){
-            return "managerAddStores";
+            return "";
         }
         return "";
     }
+
 
 
 }
