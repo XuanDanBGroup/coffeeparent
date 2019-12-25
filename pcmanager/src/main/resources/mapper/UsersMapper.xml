@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.xuandan.bgroup.pcmanager.dao.UserDao">
+
+    <select id="queryAllUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users" resultType="com.xuandan.bgroup.common.model.entity.Users">
+        select * from users where status=1
+
+    </select>
+
+    <insert id="addUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users">
+        insert into users values(#{uid},#{uname},#{wxaccount},#{phone},#{email},#{default},#{default},#{status})
+    </insert>
+
+    <update id="updateUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users">
+        UPDATE  users SET uname=#{uname},wxaccount=#{wxaccount},phone=#{phone},email=#{email},desc=#{desc},credit=#{credit} WHERE uid=#{uid}
+
+    </update>
+
+    <update id="deleteUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users">
+        UPDATE  users SET status=#{status} WHERE uid=#{uid}
+
+    </update>
+
+    <select id="detailUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users" resultType="String">
+        select * from users where uid=#{uid}
+    </select>
+</mapper>
