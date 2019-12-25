@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
 import java.util.List;
@@ -25,7 +26,7 @@ import java.util.List;
 @Controller
 public class StoresController {
 
-    @Autowired
+    @Resource
     private QiniuService qnService;
     @Value("${qiniu.path}")
     private String path;
@@ -62,7 +63,7 @@ public class StoresController {
             return "500";
         }
         request.setAttribute("info","修改成功");
-        return "managerShowStoresss";
+        return "managerShowStores";
     }
     public  String managerShowStores(HttpServletRequest request ,String sname){
          List <Stores> stores= storesService.showStores(sname);
