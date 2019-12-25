@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @Description
@@ -30,6 +32,11 @@ public class StoresController {
     private String path;
     @Autowired
     private StoresService storesService;
+    @RequestMapping("/toManagerAddStores")
+    public String toManagerAddStores(){
+        return "ftl/managerAddStores";
+    }
+
     @RequestMapping("/managerAddStores")
     public String managerAddStores(@RequestParam("file")MultipartFile file, Stores stores)throws IOException {
         Response response = qnService.uploadFile(file.getInputStream());
@@ -43,6 +50,33 @@ public class StoresController {
 
 
     }
+     @RequestMapping("/toManagerUpdateStores")
+    public String toManagerUpdateStores(HttpServletRequest request ,int storeid){
+        Stores stores=storesService.selOneStore(storeid);
+        request.setAttribute("store" ,stores);
+        return "managerUpdateStores";
+    }
+    @RequestMapping("/doManagerUpdateStores")
+    public  String doManagerUpdateStores(HttpServletRequest request ,@RequestParam("file")MultipartFile file, Stores stores)throws IOException{
+        if(stores.getSpic()!=null) {
+            Response response = qnService.uploadFile(file.getInputStream());
+            DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+            String url = path + "/" + putRet.key;
+            stores.setSpic(url);
+        }
+        if(!storesService.updateStores(stores)){
+            return "500";
+        }
+        request.setAttribute("info","修改成功");
+        return "managerShowStores";
+    }
+    public  String managerShowStores(HttpServletRequest request ,String sname){
+         List <Stores> stores= storesService.showStores(sname);
+         request.setAttribute("stores",stores);
+         return "managerShowStores";
+    }
+
+
 
 
 }

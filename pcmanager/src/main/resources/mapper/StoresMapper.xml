@@ -55,5 +55,39 @@
             </if>
         </trim>
     </insert>
+    <update id="updateStores" parameterType="com.xuandan.bgroup.common.model.entity.Stores">
+        update stores
+        <set>
+            <if test="sname != null" >
+                sname=#{sname},
+            </if>
+            <if test="sphone != null" >
+                sphone=#{sphone},
+            </if>
+            <if test="saddress != null" >
+                saddress=#{saddress},
+            </if>
+            <if test="spic != null" >
+                spic=#{spic},
+            </if>
+            <if test="score != null" >
+                score=#{score},
+            </if>
+        </set>
+        where storeid=#{storeid}
+    </update>
 
+    <delete id="delStores">
+        delete  from stores where  storeid=#{storeid}
+    </delete>
+
+    <select id="showStores" resultType="com.xuandan.bgroup.common.model.entity.Stores" parameterType="java.lang.String">
+        select * from stores
+        <if test="sname!=null">
+            where sname like  "%" #{sname} "%"
+        </if>
+    </select>
+    <select id="selOneStore" resultType="com.xuandan.bgroup.common.model.entity.Stores">
+        select * from stores where storeid=#{storeid}
+    </select>
 </mapper>
