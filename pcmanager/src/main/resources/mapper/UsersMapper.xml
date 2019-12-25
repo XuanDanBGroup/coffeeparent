@@ -15,7 +15,7 @@
     </insert>
 
     <update id="updateUsers"  parameterType="com.xuandan.bgroup.common.model.entity.Users">
-        UPDATE  users SET uname=#{uname},wxaccount=#{wxaccount},phone=#{phone},email=#{email},desc=#{desc},credit=#{credit} WHERE uid=#{uid}
+        UPDATE  users SET uname=#{uname},wxaccount=#{wxaccount},phone=#{phone},email=#{email},`desc`=#{desc},credit=#{credit} WHERE uid=#{uid}
 
     </update>
 

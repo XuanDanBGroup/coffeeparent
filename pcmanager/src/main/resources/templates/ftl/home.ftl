@@ -78,7 +78,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="/home" target="home">
+                            <a href="/getAllUsers" target="home">
                                 <span class="title">用户列表</span>
                             </a>
                         </li>

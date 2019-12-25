@@ -88,11 +88,14 @@ public class StoresController {
     @RequestMapping("/doManagerUpdateStores")
     public  String doManagerUpdateStores(HttpServletRequest request ,@RequestParam("file")MultipartFile file, Stores stores)throws IOException{
       String storesid=stores.getStoreid();
-      Response response = qnService.uploadFile(file.getInputStream());
-      DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-      String url = path + "/" + putRet.key;
-      stores.setSpic(url);
+      if(stores.getSpic()==null) {
+          Response response = qnService.uploadFile(file.getInputStream());
+          DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+          String url = path + "/" + putRet.key;
+          stores.setSpic(url);
+      }
       stores.setStoreid(storesid);
+
         if(!storesService.updateStores(stores)){
             return "500";
         }

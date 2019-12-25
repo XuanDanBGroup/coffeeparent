@@ -182,6 +182,7 @@
                         <form action="/doManagerUpdateStores" method="post" class="form-horizontal" enctype="multipart/form-data">
                             <div class="form-group">
                                 <input type="hidden" name="storeid" value="${store.storeid}">
+                                <input type="hidden" name="spic" id="oldpic" value="${store.spic}">
                                 <label class="col-sm-2 control-label">*店铺名称:</label>
 
                                 <div class="col-sm-10">
@@ -240,6 +241,7 @@
                                                 <script type="text/javascript">
                                                     //选择图片
                                                     var loadImg = function(obj){
+                                                        $("#oldpic").remove();
                                                         $(obj).parent().find(".upload_input").click();
                                                     }
                                                     //删除
