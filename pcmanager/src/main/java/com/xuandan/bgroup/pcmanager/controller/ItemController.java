@@ -52,7 +52,7 @@ public class ItemController {
 
     @RequestMapping("/delItemByStatus")
     public String delItemByStatus(Model model,String id){
-        System.out.println(id);
+        System.out.println("删除id"+id);
         int i = itemService.delItemByStatus(id);
         model.addAttribute("mess",i);
         return "redirect:showItem";
@@ -64,11 +64,17 @@ public class ItemController {
         return "ftl/updateItems";
     }
     @RequestMapping("/doUpdateItem")
-    public String doUpdateItem(Model model,Item item,@RequestParam("file") MultipartFile file) throws Exception{
-        Response response = qnService.uploadFile(file.getInputStream());
-        DefaultPutRet putRet=new Gson().fromJson(response.bodyString(),DefaultPutRet.class);
-        String url=path+"/"+putRet.key;
-        item.setIpic(url);
+    public String doUpdateItem(Model model,Item item,@RequestParam("file") MultipartFile file,String ipic ) throws Exception{
+       // System.out.println(file.getOriginalFilename().length());
+
+        if(file.isEmpty()){//如果文件为空
+            item.setIpic(ipic);
+        }else {
+            Response response = qnService.uploadFile(file.getInputStream());
+            DefaultPutRet putRet=new Gson().fromJson(response.bodyString(),DefaultPutRet.class);
+            String url=path+"/"+putRet.key;
+            item.setIpic(url);
+        }
         int i = itemService.updateItem(item);
         model.addAttribute("mess",i);
         return "redirect:showItem";

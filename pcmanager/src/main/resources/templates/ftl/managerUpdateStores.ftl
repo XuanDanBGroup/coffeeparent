@@ -182,6 +182,7 @@
                         <form action="/doManagerUpdateStores" method="post" class="form-horizontal" enctype="multipart/form-data">
                             <div class="form-group">
                                 <input type="hidden" name="storeid" value="${store.storeid}">
+                                <input type="hidden" name="spic" id="oldpic" value="${store.spic}">
                                 <label class="col-sm-2 control-label">*店铺名称:</label>
 
                                 <div class="col-sm-10">
@@ -219,7 +220,7 @@
                                                             <svg class="icon addImg" aria-hidden="true">
                                                                 <use xlink:href="#icon-tianjiatupian"></use>
                                                             </svg>
-                                                            <input style="display: none" name="file" type="file" class="upload_input" id="url1"  onChange="preview(this)" >
+                                                            <input style="display: none" name="file" type="file" class="upload_input" id="url1"  onChange="preview(this)" value="${store.spic!}">
                                                             <div class="preview">
                                                                 <img src="${store.spic!}">
                                                             </div>

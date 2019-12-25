@@ -75,7 +75,7 @@
                     <td>${it.icontent}</td>
                     <td>
                         <a href="updateItem?id=${it.itemid}" class="btn btn-secondary btn-sm btn-icon icon-left">修改</a>
-                        <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" onclick="del(${it.itemid})">删除</a>
+                        <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" onclick="del('${it.itemid}')">删除</a>
                     </td>
                 </tr>
             </#list>
