@@ -70,8 +70,8 @@
                 <td>${ulist.email}</td>
                 <td>${ulist.desc}</td>
                 <td>${ulist.credit}</td>
-                <td>${ulist.status}
-
+                <td>
+                    <#if ulist.status==1>正常</#if>
                 </td>
                 <td>
                     <a href="/toUpdateUsers?uid=${ulist.uid}" class="btn btn-secondary btn-sm btn-icon icon-left">修改</a>
