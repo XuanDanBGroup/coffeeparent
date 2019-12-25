@@ -10,11 +10,11 @@
 
     </select>
 
-    <insert id="addUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users">
-        insert into users values(#{uid},#{uname},#{wxaccount},#{phone},#{email},#{default},#{default},#{status})
+    <insert id="addUsers"  parameterType="com.xuandan.bgroup.common.model.entity.Users">
+        insert into users values(#{uid},#{uname},#{wxaccount},#{phone},#{email},default,default,default)
     </insert>
 
-    <update id="updateUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users">
+    <update id="updateUsers"  parameterType="com.xuandan.bgroup.common.model.entity.Users">
         UPDATE  users SET uname=#{uname},wxaccount=#{wxaccount},phone=#{phone},email=#{email},desc=#{desc},credit=#{credit} WHERE uid=#{uid}
 
     </update>
