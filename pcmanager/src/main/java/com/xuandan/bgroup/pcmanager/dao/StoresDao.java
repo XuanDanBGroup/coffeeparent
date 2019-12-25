@@ -32,7 +32,7 @@ public interface StoresDao {
      * @param storeid 店铺id
      * @return 1成功0失败
      */
-    int delStores(int storeid);
+    int delStores(String storeid);
 
     /**
      * 查询店铺信息 ，所有或按名称查询
@@ -46,5 +46,5 @@ public interface StoresDao {
      * @param storeid 店铺id
      * @return 这个店铺全部信息
      */
-    Stores selOneStore(int storeid);
+    Stores selOneStore(String storeid);
 }

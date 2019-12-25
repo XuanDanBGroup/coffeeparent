@@ -97,7 +97,7 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="/householdList" target="home">
+                            <a href="/showStores" target="home">
                                 <span class="title">商家列表</span>
                             </a>
                         </li>

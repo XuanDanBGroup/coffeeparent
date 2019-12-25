@@ -77,7 +77,7 @@
         where storeid=#{storeid}
     </update>
 
-    <delete id="delStores">
+    <delete id="delStores" parameterType="java.lang.String">
         delete  from stores where  storeid=#{storeid}
     </delete>
 
@@ -87,7 +87,7 @@
             where sname like  "%" #{sname} "%"
         </if>
     </select>
-    <select id="selOneStore" resultType="com.xuandan.bgroup.common.model.entity.Stores">
+    <select id="selOneStore" resultType="com.xuandan.bgroup.common.model.entity.Stores" parameterType="java.lang.String">
         select * from stores where storeid=#{storeid}
     </select>
 </mapper>

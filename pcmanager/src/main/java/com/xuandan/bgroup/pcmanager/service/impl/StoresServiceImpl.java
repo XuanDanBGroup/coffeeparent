@@ -38,7 +38,7 @@ public class StoresServiceImpl implements StoresService {
     }
 
     @Override
-    public boolean delStores(int storeid) {
+    public boolean delStores(String storeid) {
         if(storesDao.delStores(storeid)>0){
             return true;
         }
@@ -51,7 +51,7 @@ public class StoresServiceImpl implements StoresService {
     }
 
     @Override
-    public Stores selOneStore(int storeid) {
+    public Stores selOneStore(String storeid) {
         return storesDao.selOneStore(storeid);
     }
 

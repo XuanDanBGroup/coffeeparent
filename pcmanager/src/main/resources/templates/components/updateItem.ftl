@@ -12,16 +12,16 @@
     <title>添加新闻</title>
 
     <link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">
-    <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
-    <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/css/bootstrap.css">
-    <link rel="stylesheet" href="assets/css/xenon-core.css">
-    <link rel="stylesheet" href="assets/css/xenon-forms.css">
-    <link rel="stylesheet" href="assets/css/xenon-components.css">
-    <link rel="stylesheet" href="assets/css/xenon-skins.css">
-    <link rel="stylesheet" href="assets/css/custom.css">
+    <link rel="stylesheet" href="../../static/assets/css/fonts/linecons/css/linecons.css">
+    <link rel="stylesheet" href="../../static/assets/css/fonts/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/assets/css/bootstrap.css">
+    <link rel="stylesheet" href="../../static/assets/css/xenon-core.css">
+    <link rel="stylesheet" href="../../static/assets/css/xenon-forms.css">
+    <link rel="stylesheet" href="../../static/assets/css/xenon-components.css">
+    <link rel="stylesheet" href="../../static/assets/css/xenon-skins.css">
+    <link rel="stylesheet" href="../../static/assets/css/custom.css">
 
-    <script src="assets/js/jquery-1.11.1.min.js"></script>
+    <script src="../../static/assets/js/jquery-1.11.1.min.js"></script>
 </head>
 <body>
 <div class="row">
@@ -57,7 +57,7 @@
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="field-4">新闻图片</label>
                         <div class="col-sm-10">
-                            <img src="pic/${item.ipic}" alt="" height="400px" >
+                            <img src="${item.ipic}" alt="" height="400px" >
                             <input type="file" class="form-control" id="field-4" name="ipic" style="display: none" >
                         </div>
                     </div>
@@ -83,16 +83,16 @@
 </div>
 
 <!-- Bottom Scripts -->
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/TweenMax.min.js"></script>
-<script src="assets/js/resizeable.js"></script>
-<script src="assets/js/joinable.js"></script>
-<script src="assets/js/xenon-api.js"></script>
-<script src="assets/js/xenon-toggles.js"></script>
+<script src="../../static/assets/js/bootstrap.min.js"></script>
+<script src="../../static/assets/js/TweenMax.min.js"></script>
+<script src="../../static/assets/js/resizeable.js"></script>
+<script src="../../static/assets/js/joinable.js"></script>
+<script src="../../static/assets/js/xenon-api.js"></script>
+<script src="../../static/assets/js/xenon-toggles.js"></script>
 
 
 <!-- JavaScripts initializations and stuff -->
-<script src="assets/js/xenon-custom.js"></script>
+<script src="../../static/assets/js/xenon-custom.js"></script>
 
 </body>
 </html>

@@ -50,30 +50,66 @@ public class StoresController {
 
 
     }
+
+    /**
+     * 去修改界面
+     * @param request 返回这条商铺信息
+     * @param storeid 点击时获取的id
+     * @return 修改界面
+     */
      @RequestMapping("/toManagerUpdateStores")
-    public String toManagerUpdateStores(HttpServletRequest request ,int storeid){
+    public String toManagerUpdateStores(HttpServletRequest request ,String storeid){
+         System.out.println(222);
         Stores stores=storesService.selOneStore(storeid);
         request.setAttribute("store" ,stores);
-        return "managerUpdateStores";
+        return "ftl/managerUpdateStores";
     }
+
+    /**
+     * 修改或删除用户信息
+     * @param request  修改成功信息
+     * @param file 图片
+     * @param stores 修改完的信息
+     * @return  展示界面
+     * @throws IOException
+     */
     @RequestMapping("/doManagerUpdateStores")
     public  String doManagerUpdateStores(HttpServletRequest request ,@RequestParam("file")MultipartFile file, Stores stores)throws IOException{
-        if(stores.getSpic()!=null) {
-            Response response = qnService.uploadFile(file.getInputStream());
-            DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-            String url = path + "/" + putRet.key;
-            stores.setSpic(url);
-        }
+      String storesid=stores.getStoreid();
+      Response response = qnService.uploadFile(file.getInputStream());
+      DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+      String url = path + "/" + putRet.key;
+      stores.setSpic(url);
+      stores.setStoreid(storesid);
         if(!storesService.updateStores(stores)){
             return "500";
         }
         request.setAttribute("info","修改成功");
-        return "managerShowStores";
+        return "ftl/managerShowStores";
     }
+
+    public  String delStores(HttpServletRequest request ,String storeid){
+        Stores stores=new Stores();
+        stores.setStoreid(storeid);
+        stores.setStatus(0);
+        if(storesService.updateStores(stores)){
+            return "500";
+        }
+        request.setAttribute("info","删除成功");
+        return "ftl/managerShowStores";
+    }
+
+    /**
+     * 展示所有商铺 或按名称模糊查询
+     * @param request 返回所有商铺的信息
+     * @param sname 按名字模糊查询
+     * @return 展示所有界面
+     */
+    @RequestMapping("/showStores")
     public  String managerShowStores(HttpServletRequest request ,String sname){
          List <Stores> stores= storesService.showStores(sname);
          request.setAttribute("stores",stores);
-         return "managerShowStores";
+         return "ftl/managerShowStores";
     }
 
 
