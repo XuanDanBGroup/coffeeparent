@@ -27,4 +27,5 @@ public class StoresServiceImpl implements StoresService {
        }
        return false;
     }
+    public void init(){}
 }
