@@ -32,11 +32,23 @@ public class StoresController {
     private String path;
     @Autowired
     private StoresService storesService;
+
+    /**
+     * 去新增商铺页面
+     * @return
+     */
     @RequestMapping("/toManagerAddStores")
     public String toManagerAddStores(){
         return "ftl/managerAddStores";
     }
 
+    /**
+     * 新增商铺信息
+     * @param file 商铺图片
+     * @param stores 商铺信息
+     * @return
+     * @throws IOException
+     */
     @RequestMapping("/managerAddStores")
     public String managerAddStores(@RequestParam("file")MultipartFile file, Stores stores)throws IOException {
         Response response = qnService.uploadFile(file.getInputStream());
@@ -85,7 +97,7 @@ public class StoresController {
             return "500";
         }
         request.setAttribute("info","修改成功");
-        return "ftl/managerShowStores";
+        return "redirect:/showStores";
     }
 
     /**
@@ -103,7 +115,7 @@ public class StoresController {
             return "500";
         }
         request.setAttribute("info","删除成功");
-        return "ftl/managerShowStores";
+        return "redirect:/showStores";
     }
 
     /**
