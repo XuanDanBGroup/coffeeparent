@@ -59,9 +59,10 @@ public class StoresController {
      */
      @RequestMapping("/toManagerUpdateStores")
     public String toManagerUpdateStores(HttpServletRequest request ,String storeid){
+         System.out.println(222);
         Stores stores=storesService.selOneStore(storeid);
         request.setAttribute("store" ,stores);
-        return "managerUpdateStores";
+        return "ftl/managerUpdateStores";
     }
 
     /**
@@ -74,17 +75,17 @@ public class StoresController {
      */
     @RequestMapping("/doManagerUpdateStores")
     public  String doManagerUpdateStores(HttpServletRequest request ,@RequestParam("file")MultipartFile file, Stores stores)throws IOException{
-        if(stores.getSpic()!=null) {
-            Response response = qnService.uploadFile(file.getInputStream());
-            DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
-            String url = path + "/" + putRet.key;
-            stores.setSpic(url);
-        }
+      String storesid=stores.getStoreid();
+      Response response = qnService.uploadFile(file.getInputStream());
+      DefaultPutRet putRet = new Gson().fromJson(response.bodyString(), DefaultPutRet.class);
+      String url = path + "/" + putRet.key;
+      stores.setSpic(url);
+      stores.setStoreid(storesid);
         if(!storesService.updateStores(stores)){
             return "500";
         }
         request.setAttribute("info","修改成功");
-        return "managerShowStores";
+        return "ftl/managerShowStores";
     }
 
     public  String delStores(HttpServletRequest request ,String storeid){
@@ -95,7 +96,7 @@ public class StoresController {
             return "500";
         }
         request.setAttribute("info","删除成功");
-        return "managerShowStores";
+        return "ftl/managerShowStores";
     }
 
     /**
@@ -108,7 +109,7 @@ public class StoresController {
     public  String managerShowStores(HttpServletRequest request ,String sname){
          List <Stores> stores= storesService.showStores(sname);
          request.setAttribute("stores",stores);
-         return "managerShowStores";
+         return "ftl/managerShowStores";
     }
 
 

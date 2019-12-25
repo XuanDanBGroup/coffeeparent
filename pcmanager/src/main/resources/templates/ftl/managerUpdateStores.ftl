@@ -179,7 +179,7 @@
                     </div>
                     <div class="panel-body">
 
-                        <form action="/managerAddStores" method="post" class="form-horizontal" enctype="multipart/form-data">
+                        <form action="/doManagerUpdateStores" method="post" class="form-horizontal" enctype="multipart/form-data">
                             <div class="form-group">
                                 <input type="hidden" name="storeid" value="${store.storeid}">
                                 <label class="col-sm-2 control-label">*店铺名称:</label>
@@ -221,7 +221,7 @@
                                                             </svg>
                                                             <input style="display: none" name="file" type="file" class="upload_input" id="url1"  onChange="preview(this)" >
                                                             <div class="preview">
-
+                                                                <img src="${store.spic!}">
                                                             </div>
                                                             <div class="click" onClick="loadImg(this)">
                                                             </div>
