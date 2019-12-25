@@ -43,14 +43,7 @@
             <div class="panel-body">
 
                 <form role="form" class="form-horizontal" action="/doAddUsers" enctype="multipart/form-data" method="post">
-                <#--用户id-->
-                    <div class="form-group">
-                        <label class="col-sm-2 control-label" for="field-1">用户ID</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="field-1" placeholder="请输入用户ID" name="uid">
-                        </div>
-                    </div>
-                    <div class="form-group-separator"></div>
+
                 <#--用户名-->
                     <div class="form-group">
                         <label class="col-sm-2 control-label" for="field-1">用户名</label>
