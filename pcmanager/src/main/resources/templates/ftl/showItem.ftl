@@ -47,9 +47,8 @@
         <table class="table table-bordered table-striped" id="example-4">
             <thead>
             <tr>
-                <th>新闻ID</th>
-                <th>新闻图片</th>
                 <th>新闻标题</th>
+                <th>新闻图片</th>
                 <th>新闻内容</th>
                 <th>操作</th>
             </tr>
@@ -57,9 +56,9 @@
 
             <tfoot>
             <tr>
-                <th>新闻ID</th>
-                <th>新闻图片</th>
                 <th>新闻标题</th>
+                <th>新闻图片</th>
+
                 <th>新闻内容</th>
                 <th>操作</th>
             </tr>
@@ -68,11 +67,11 @@
             <tbody>
             <#list itemList as it>
                 <tr>
-                    <td>${it.itemid}</td>
-                    <td>
-                        <img src="pic/${it.ipic}" alt="新闻图片" height="80px">
-                    </td>
                     <td>${it.ititle}</td>
+                    <td>
+                        <img src="${it.ipic}" alt="新闻图片" height="80px">
+                    </td>
+
                     <td>${it.icontent}</td>
                     <td>
                         <a href="updateItem?id=${it.itemid}" class="btn btn-secondary btn-sm btn-icon icon-left">修改</a>
