@@ -78,12 +78,12 @@
                     </a>
                     <ul>
                         <li>
-                            <a href="/householdList" target="home">
+                            <a href="/home" target="home">
                                 <span class="title">用户列表</span>
                             </a>
                         </li>
                         <li>
-                            <a href="/addItem" target="home">
+                            <a href="/toAddUsers" target="home">
                                 <span class="title">用户添加</span>
                             </a>
                         </li>
@@ -207,7 +207,9 @@
         </nav>
 
 
-        <iframe name="home" width="90%" height="90%" style="border: none;" src="/first"> </iframe>
+        <iframe name="home" width="90%" height="90%" style="border: none;" src="/first">
+
+        </iframe>
 
     </div>
 </div>
