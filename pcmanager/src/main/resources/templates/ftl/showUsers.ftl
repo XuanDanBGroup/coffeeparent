@@ -47,7 +47,7 @@
         <table class="table table-bordered table-striped" id="example-4">
             <thead>
             <tr>
-                <th>用户ID</th>
+
                 <th>用户名</th>
                 <th>微信号</th>
                 <th>手机号</th>
@@ -64,7 +64,7 @@
             <tbody>
             <#list usersList as ulist>
             <tr>
-                <td>${ulist.uid}</td>
+
                 <td>${ulist.uname}</td>
                 <td>${ulist.wxaccount}</td>
                 <td>${ulist.phone}</td>
