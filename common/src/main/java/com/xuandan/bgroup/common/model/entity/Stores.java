@@ -68,4 +68,17 @@ public class Stores  implements Serializable {
     public void setStatus(Integer status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Stores{" +
+                "storeid='" + storeid + '\'' +
+                ", sname='" + sname + '\'' +
+                ", sphone='" + sphone + '\'' +
+                ", saddress='" + saddress + '\'' +
+                ", spic='" + spic + '\'' +
+                ", score=" + score +
+                ", status=" + status +
+                '}';
+    }
 }
