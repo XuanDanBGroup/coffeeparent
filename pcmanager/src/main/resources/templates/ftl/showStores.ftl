@@ -54,6 +54,7 @@
                 <th>地址</th>
                 <th>商家图片</th>
                 <th>信誉值</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
             </thead>
@@ -65,6 +66,7 @@
                 <th>地址</th>
                 <th>商家图片</th>
                 <th>信誉值</th>
+                <th>状态</th>
                 <th>操作</th>
             </tr>
             </tfoot>

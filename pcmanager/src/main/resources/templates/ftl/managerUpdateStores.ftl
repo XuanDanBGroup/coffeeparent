@@ -219,7 +219,7 @@
                                                             <svg class="icon addImg" aria-hidden="true">
                                                                 <use xlink:href="#icon-tianjiatupian"></use>
                                                             </svg>
-                                                            <input style="display: none" name="file" type="file" class="upload_input" id="url1"  onChange="preview(this)" >
+                                                            <input style="display: none" name="file" type="file" class="upload_input" id="url1"  onChange="preview(this)" value="${store.spic!}">
                                                             <div class="preview">
                                                                 <img src="${store.spic!}">
                                                             </div>

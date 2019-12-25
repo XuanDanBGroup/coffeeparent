@@ -125,7 +125,7 @@
                         </div>
                     </div>
                     <div class="panel-body">
-                        <form action="/doAddItem" method="post" class="form-horizontal" enctype="multipart/form-data">
+                        <form action="/doUpdateItem" method="post" class="form-horizontal" enctype="multipart/form-data">
                            <input type="hidden" name="itemid" value="${item.itemid}">
                             <div class="form-group">
                                 <label class="col-sm-2 control-label">*新闻标题:</label>
@@ -164,6 +164,7 @@
                                                                 <use xlink:href="#icon-tianjiatupian"></use>
                                                             </svg>
                                                             <input style="display: none" name="file" type="file" class="upload_input" id="url1"  onChange="preview(this)" >
+                                                            <input type="hidden" name="ipic" value="${item.ipic}">
                                                             <div class="preview">
                                                                <img src=" ${item.ipic}"/>
                                                             </div>
