@@ -3,7 +3,57 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="">
+<mapper namespace="com.xuandan.bgroup.pcmanager.dao.StoresDao">
+    <insert id="addStores" parameterType="com.xuandan.bgroup.common.model.entity.Stores">
+        insert into stores
+        <trim prefix="(" suffix=")" suffixOverrides="," >
+            <if test="storeid != null" >
+                storeid,
+            </if>
+            <if test="sname != null" >
+                sname,
+            </if>
+            <if test="sphone != null" >
+                sphone,
+            </if>
+            <if test="saddress != null" >
+                saddress,
+            </if>
+            <if test="spic != null" >
+                spic,
+            </if>
+            <if test="score != null" >
+                score,
+            </if>
 
+            <if test="status != null" >
+                status,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides="," >
+            <if test="storeid != null" >
+                #{storeid},
+            </if>
+            <if test="sname != null" >
+                #{sname}
+            </if>
+            <if test="sphone != null" >
+                #{sphone},
+            </if>
+            <if test="saddress != null" >
+                #{saddress},
+            </if>
+            <if test="spic != null" >
+                #{spic},
+            </if>
+            <if test="score != null" >
+                #{score},
+            </if>
+
+            <if test="status != null" >
+                #{status},
+            </if>
+        </trim>
+    </insert>
 
 </mapper>

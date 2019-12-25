@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>鹤壁清洁能源管理平台</title>
+    <title>COFFEE预约管理平台</title>
     <link href="../css/login.css" rel="stylesheet"/>
 </head>
 
@@ -24,7 +24,7 @@
         <header>
             <div class="logo">
                 <img src="../images/image_pc_logo.png"/>
-                <div>鹤壁市农村清洁取暖智能管理平台</div>
+                <div>COFFEE预约管理平台</div>
             </div>
         </header>
 
@@ -35,7 +35,7 @@
                     <span>欢迎登录</span>
                 </div>
                 <div>
-                    <input type="text" name="phone" placeholder="请输入用户名">
+                    <input type="text" name="username" placeholder="请输入用户名">
                 </div>
                 <div>
                     <input type="password" name="password" placeholder="请输入密码">
@@ -44,7 +44,7 @@
                 <div>
                     <button type="submit">登 录</button>
                 </div>
-                <div class="text">Copyright &#169 2019-2024 中能北方科技有限公司</div>
+                <div class="text">Copyright &#169 2019-2024 玄丹工作室</div>
             </div>
         </div>
     </div>
