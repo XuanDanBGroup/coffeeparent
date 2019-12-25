@@ -71,7 +71,9 @@
                 <td>${ulist.email}</td>
                 <td>${ulist.desc}</td>
                 <td>${ulist.credit}</td>
-                <td>${ulist.status}</td>
+                <td>${ulist.status}
+
+                </td>
                 <td>
                     <a href="/toUpdateUsers?uid=${ulist.uid}" class="btn btn-secondary btn-sm btn-icon icon-left">修改</a>
                     <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" onclick="del(${ulist.uid})">删除</a>

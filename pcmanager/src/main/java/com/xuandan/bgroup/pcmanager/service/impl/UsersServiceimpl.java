@@ -1,6 +1,7 @@
 package com.xuandan.bgroup.pcmanager.service.impl;
 
 import com.xuandan.bgroup.common.model.entity.Users;
+import com.xuandan.bgroup.common.utils.IdWorker;
 import com.xuandan.bgroup.pcmanager.dao.UserDao;
 import com.xuandan.bgroup.pcmanager.service.UsersService;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,7 @@ public class UsersServiceimpl implements UsersService {
 
     @Override
     public Boolean addUsers(Users users) {
+        users.setUid(IdWorker.getId());
        if (usersDao.addUsers(users)!=0){
            return true;
        }
