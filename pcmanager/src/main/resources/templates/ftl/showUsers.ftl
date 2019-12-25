@@ -64,7 +64,6 @@
             <tbody>
             <#list usersList as ulist>
             <tr>
-
                 <td>${ulist.uname}</td>
                 <td>${ulist.wxaccount}</td>
                 <td>${ulist.phone}</td>
@@ -76,7 +75,7 @@
                 </td>
                 <td>
                     <a href="/toUpdateUsers?uid=${ulist.uid}" class="btn btn-secondary btn-sm btn-icon icon-left">修改</a>
-                    <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" onclick="del(${ulist.uid})">删除</a>
+                    <a href="/doDelete?uid=${ulist.uid}" class="btn btn-danger btn-sm btn-icon icon-left" onclick="return confirm('确定删除吗?')">删除</a>
                 </td>
 
 
@@ -84,6 +83,7 @@
             </#list>
             </tbody>
         </table>
+        <#--
         <script type="text/javascript">
             function del(uid) {
                 if ( window.confirm("确定要删除吗？")){
@@ -91,6 +91,7 @@
                 }
             }
         </script>
+        -->
 
     </div>
 </div>
