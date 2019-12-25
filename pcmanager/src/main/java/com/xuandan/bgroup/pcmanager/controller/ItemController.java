@@ -52,7 +52,7 @@ public class ItemController {
 
     @RequestMapping("/delItemByStatus")
     public String delItemByStatus(Model model,String id){
-        System.out.println(id);
+        System.out.println("删除id"+id);
         int i = itemService.delItemByStatus(id);
         model.addAttribute("mess",i);
         return "redirect:showItem";
