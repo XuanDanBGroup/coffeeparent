@@ -241,7 +241,6 @@
                                                 <script type="text/javascript">
                                                     //选择图片
                                                     var loadImg = function(obj){
-                                                        $("#oldpic").remove();
                                                         $(obj).parent().find(".upload_input").click();
                                                     }
                                                     //删除
