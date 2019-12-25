@@ -50,4 +50,15 @@ public class Item implements Serializable {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemid='" + itemid + '\'' +
+                ", ipic='" + ipic + '\'' +
+                ", ititle='" + ititle + '\'' +
+                ", icontent='" + icontent + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }
