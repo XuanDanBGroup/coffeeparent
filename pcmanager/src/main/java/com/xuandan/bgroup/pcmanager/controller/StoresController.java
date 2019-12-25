@@ -95,7 +95,7 @@ public class StoresController {
           stores.setSpic(url);
       }
       stores.setStoreid(storesid);
-        System.out.println(stores);
+
         if(!storesService.updateStores(stores)){
             return "500";
         }
