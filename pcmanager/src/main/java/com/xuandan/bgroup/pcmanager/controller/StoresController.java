@@ -46,7 +46,7 @@ public class StoresController {
         if(!storesService.addStores(stores)){
             return "500";
         }
-        return "managerAddStores";
+        return "redirect:/showStores";
 
 
     }
@@ -66,7 +66,7 @@ public class StoresController {
     }
 
     /**
-     * 修改或删除用户信息
+     * 修改用户信息
      * @param request  修改成功信息
      * @param file 图片
      * @param stores 修改完的信息
@@ -88,10 +88,17 @@ public class StoresController {
         return "ftl/managerShowStores";
     }
 
-    public  String delStores(HttpServletRequest request ,String storeid){
+    /**
+     * 删除商铺（修改商铺的状态）
+     * @param request
+     * @param storeid
+     * @return
+     */
+    @RequestMapping("/updateStoresStatus")
+    public  String updateStoresStatus(HttpServletRequest request ,String storeid){
         Stores stores=new Stores();
         stores.setStoreid(storeid);
-        stores.setStatus(0);
+        stores.setStatus(2);
         if(storesService.updateStores(stores)){
             return "500";
         }
@@ -102,15 +109,15 @@ public class StoresController {
     /**
      * 展示所有商铺 或按名称模糊查询
      * @param request 返回所有商铺的信息
-     * @param sname 按名字模糊查询
      * @return 展示所有界面
      */
     @RequestMapping("/showStores")
-    public  String managerShowStores(HttpServletRequest request ,String sname){
-         List <Stores> stores= storesService.showStores(sname);
-         request.setAttribute("stores",stores);
-         return "ftl/managerShowStores";
+    public  String managerShowStores(HttpServletRequest request){
+        List <Stores> storeList= storesService.showStores(null);
+        request.setAttribute("storeList",storeList);
+         return "ftl/showStores";
     }
+
 
 
 

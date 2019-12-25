@@ -10,20 +10,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class InitController {
-
+    /**
+     * 跳转登录页
+     * @return
+     */
     @RequestMapping("/PCManager")
     public String PCManger(){
         return "loginManager";
     }
 
+    /**
+     * 登录登录成功去首页，不成功在登录页
+     * @param username
+     * @param password
+     * @return
+     */
     @RequestMapping("/loginManager")
     public String loginManger(String username,String password ){
         if(username.equals("admin")&&password.equals("123456")){
-            return "";
+            return "ftl/home";
         }
-        return "";
+        return "loginManager";
     }
 
-
+    /**
+     * 首页展示内容页面
+     * @return
+     */
+    @RequestMapping("/first")
+    public String first(){
+        return "ftl/first";
+    }
 
 }
