@@ -73,6 +73,9 @@
             <if test="score != null" >
                 score=#{score},
             </if>
+            <if test="status !=null">
+                status=#{status},
+            </if>
         </set>
         where storeid=#{storeid}
     </update>

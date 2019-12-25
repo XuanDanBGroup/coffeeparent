@@ -10,21 +10,21 @@
 
     </select>
 
-    <insert id="addUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users">
-        insert into users values(#{uid},#{uname},#{wxaccount},#{phone},#{email},#{default},#{default},#{status})
+    <insert id="addUsers"  parameterType="com.xuandan.bgroup.common.model.entity.Users">
+        insert into users values(#{uid},#{uname},#{wxaccount},#{phone},#{email},default,default,default)
     </insert>
 
-    <update id="updateUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users">
+    <update id="updateUsers"  parameterType="com.xuandan.bgroup.common.model.entity.Users">
         UPDATE  users SET uname=#{uname},wxaccount=#{wxaccount},phone=#{phone},email=#{email},desc=#{desc},credit=#{credit} WHERE uid=#{uid}
 
     </update>
 
     <update id="deleteUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users">
-        UPDATE  users SET status=#{status} WHERE uid=#{uid}
+        UPDATE  users SET status=2 WHERE uid=#{uid}
 
     </update>
 
-    <select id="detailUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users" resultType="String">
+    <select id="detailUsers" parameterType="java.lang.String" resultType="com.xuandan.bgroup.common.model.entity.Users">
         select * from users where uid=#{uid}
     </select>
 </mapper>

@@ -22,7 +22,7 @@ public class StoresServiceImpl implements StoresService {
     public boolean addStores(Stores stores) {
         stores.setStoreid(IdWorker.getId());
         stores.setStatus(1);
-        System.out.println(stores);
+
        if(storesDao.addStores(stores)>0){
            return true;
        }
@@ -31,7 +31,7 @@ public class StoresServiceImpl implements StoresService {
 
     @Override
     public boolean updateStores(Stores stores) {
-        if(storesDao.updateStores(stores)>1){
+        if(storesDao.updateStores(stores)>0){
             return true;
         }
         return false;

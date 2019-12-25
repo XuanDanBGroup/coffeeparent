@@ -32,11 +32,23 @@ public class StoresController {
     private String path;
     @Autowired
     private StoresService storesService;
+
+    /**
+     * 去新增商铺页面
+     * @return
+     */
     @RequestMapping("/toManagerAddStores")
     public String toManagerAddStores(){
         return "ftl/managerAddStores";
     }
 
+    /**
+     * 新增商铺信息
+     * @param file 商铺图片
+     * @param stores 商铺信息
+     * @return
+     * @throws IOException
+     */
     @RequestMapping("/managerAddStores")
     public String managerAddStores(@RequestParam("file")MultipartFile file, Stores stores)throws IOException {
         Response response = qnService.uploadFile(file.getInputStream());
@@ -46,7 +58,7 @@ public class StoresController {
         if(!storesService.addStores(stores)){
             return "500";
         }
-        return "managerAddStores";
+        return "redirect:/showStores";
 
 
     }
@@ -59,14 +71,14 @@ public class StoresController {
      */
      @RequestMapping("/toManagerUpdateStores")
     public String toManagerUpdateStores(HttpServletRequest request ,String storeid){
-         System.out.println(222);
+
         Stores stores=storesService.selOneStore(storeid);
         request.setAttribute("store" ,stores);
         return "ftl/managerUpdateStores";
     }
 
     /**
-     * 修改或删除用户信息
+     * 修改用户信息
      * @param request  修改成功信息
      * @param file 图片
      * @param stores 修改完的信息
@@ -85,32 +97,40 @@ public class StoresController {
             return "500";
         }
         request.setAttribute("info","修改成功");
-        return "ftl/managerShowStores";
+        return "redirect:/showStores";
     }
 
-    public  String delStores(HttpServletRequest request ,String storeid){
+    /**
+     * 删除商铺（修改商铺的状态）
+     * @param request
+     * @param storeid
+     * @return
+     */
+    @RequestMapping("/updateStoresStatus")
+    public  String updateStoresStatus(HttpServletRequest request ,String storeid){
         Stores stores=new Stores();
         stores.setStoreid(storeid);
+        System.out.println(storeid);
         stores.setStatus(0);
-        if(storesService.updateStores(stores)){
+        if(!storesService.updateStores(stores)){
             return "500";
         }
         request.setAttribute("info","删除成功");
-        return "ftl/managerShowStores";
+        return "redirect:/showStores";
     }
 
     /**
      * 展示所有商铺 或按名称模糊查询
      * @param request 返回所有商铺的信息
-     * @param sname 按名字模糊查询
      * @return 展示所有界面
      */
     @RequestMapping("/showStores")
-    public  String managerShowStores(HttpServletRequest request ,String sname){
-         List <Stores> stores= storesService.showStores(sname);
-         request.setAttribute("stores",stores);
-         return "ftl/managerShowStores";
+    public  String managerShowStores(HttpServletRequest request){
+        List <Stores> storeList= storesService.showStores(null);
+        request.setAttribute("storeList",storeList);
+         return "ftl/showStores";
     }
+
 
 
 

@@ -3,7 +3,7 @@
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 <head>
     <meta charset="utf-8"/>
-        <title>index</title>
+        <title>商家列表</title>
         <link rel="stylesheet" href="http://fonts.useso.com/css?family=Arimo:400,700,400italic">
         <link rel="stylesheet" href="assets/css/fonts/linecons/css/linecons.css">
         <link rel="stylesheet" href="assets/css/fonts/fontawesome/css/font-awesome.min.css">
@@ -17,12 +17,13 @@
         <script src="assets/js/jquery-1.11.1.min.js"></script>
     </head>
 <body>
+
 <!-- Table exporting -->
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title">新闻列表展示</h3>
+        <h3 class="panel-title">商家信息列表</h3>
         <#--新增-->
-        <a href="/addItem"  class="btn btn-primary btn-single btn-sm" style="background-color: #0b6aff;margin-left: 500px;">添加</a>
+        <a href="/toManagerAddStores"  class="btn btn-primary btn-single btn-sm" style="background-color: #0b6aff;margin-left: 500px;">添加</a>
         <div class="panel-options">
             <a href="#" data-toggle="panel">
                 <span class="collapse-icon">&ndash;</span>
@@ -33,6 +34,7 @@
             </a>
         </div>
     </div>
+
     <div class="panel-body">
         <script type="text/javascript">
             jQuery(document).ready(function($)
@@ -47,36 +49,45 @@
         <table class="table table-bordered table-striped" id="example-4">
             <thead>
             <tr>
-                <th>新闻ID</th>
-                <th>新闻图片</th>
-                <th>新闻标题</th>
-                <th>新闻内容</th>
+                <th>商铺名称</th>
+                <th>手机号</th>
+                <th>地址</th>
+                <th>商家图片</th>
+                <th>信誉值</th>
                 <th>操作</th>
             </tr>
             </thead>
 
             <tfoot>
             <tr>
-                <th>新闻ID</th>
-                <th>新闻图片</th>
-                <th>新闻标题</th>
-                <th>新闻内容</th>
+                <th>商铺名称</th>
+                <th>手机号</th>
+                <th>地址</th>
+                <th>商家图片</th>
+                <th>信誉值</th>
                 <th>操作</th>
             </tr>
             </tfoot>
 
             <tbody>
-            <#list itemList as it>
+            <#list storeList as stores>
                 <tr>
-                    <td>${it.itemid}</td>
+                    <td>${stores.sname}</td>
+                    <td>${stores.sphone}</td>
+                    <td>${stores.saddress!}</td>
                     <td>
-                        <img src="pic/${it.ipic}" alt="新闻图片" height="80px">
+                        <img src="${stores.spic!}" alt="商家图片" height="80px">
                     </td>
-                    <td>${it.ititle}</td>
-                    <td>${it.icontent}</td>
+                    <td>${stores.score}</td>
                     <td>
-                        <a href="updateItem?id=${it.itemid}" class="btn btn-secondary btn-sm btn-icon icon-left">修改</a>
-                        <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" onclick="del(${it.itemid})">删除</a>
+                        <#if stores.status==1>正常</#if>
+                        <#if stores.status==0>不正常</#if>
+                        <#if stores.status==2>被禁用</#if>
+
+                    </td>
+                    <td>
+                        <a href="toManagerUpdateStores?storeid=${stores.storeid?string}" class="btn btn-secondary btn-sm btn-icon icon-left">修改</a>
+                        <a href="#" class="btn btn-danger btn-sm btn-icon icon-left" onclick="del('${stores.storeid}')">删除</a>
                     </td>
                 </tr>
             </#list>
@@ -85,7 +96,7 @@
         <script type="text/javascript">
             function del(id) {
                if ( window.confirm("确定要删除吗？")){
-                   location.href="delItemByStatus?id="+id;
+                   location.href="updateStoresStatus?storeid="+id;
                }
             }
         </script>
