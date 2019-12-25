@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.annotation.Resource;
 import java.io.IOException;
 
 /**
@@ -23,7 +24,7 @@ import java.io.IOException;
 @Controller
 public class StoresController {
 
-    @Autowired
+    @Resource
     private QiniuService qnService;
     @Value("${qiniu.path}")
     private String path;
