@@ -22,7 +22,7 @@ public class UsersController {
     public String getAllUsers(Model model){
         List<Users>usersList=usersService.queryAllUsers();
         model.addAttribute("usersList",usersList);
-        return "ftl/getAllUsers";
+        return "ftl/showUsers";
     }
     //去添加用户界面 ↓
     @RequestMapping("toAddUsers")
@@ -39,8 +39,25 @@ public class UsersController {
     }
 
     //删除用户
-    public String deleteUsers(Users users){
+    @RequestMapping("doDelete")
+    public String doDelete(Users users){
         if (usersService.deleteUsers(users)){
+            return "getAllUsers";
+        }
+        return "getAllUsers";
+    }
+
+    //去修改界面  根据id获取要修改的对象
+    @RequestMapping("toUpdateUsers")
+    public String getUsersById(String uid,Model model){
+        Users users=usersService.detailUsers(uid);
+        model.addAttribute("users",users);
+        return "ftl/updateUsers";
+    }
+    //做修改操作
+    @RequestMapping("doUpdateUsers")
+    public String doUpdateUsers(Users users){
+        if (usersService.updateUsers(users)){
             return "getAllUsers";
         }
         return "getAllUsers";

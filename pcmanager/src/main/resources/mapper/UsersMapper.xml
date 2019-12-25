@@ -20,11 +20,11 @@
     </update>
 
     <update id="deleteUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users">
-        UPDATE  users SET status=#{status} WHERE uid=#{uid}
+        UPDATE  users SET status=2 WHERE uid=#{uid}
 
     </update>
 
-    <select id="detailUsers" parameterType="com.xuandan.bgroup.common.model.entity.Users" resultType="String">
+    <select id="detailUsers" parameterType="java.lang.String" resultType="com.xuandan.bgroup.common.model.entity.Users">
         select * from users where uid=#{uid}
     </select>
 </mapper>
