@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xuandan.bgroup.pcmanager.dao.ItemsDao">
+    <select id="queryAllItem" resultType="com.xuandan.bgroup.common.model.entity.Item">
+        select * from items where status=1
+    </select>
+    <insert id="addItem" parameterType="com.xuandan.bgroup.common.model.entity.Item">
+        insert into items values (#{itemid},#{ipic},#{ititle},#{icontent},1)
+    </insert>
+    <update id="delItemByStatus" parameterType="String">
+        update items set status=0 where itemid=#{id}
+    </update>
+    <update id="updateItem" parameterType="com.xuandan.bgroup.common.model.entity.Item">
+        update items set ipic=#{ipic},ititle=#{ititle},icontent=#{icontent} where itemid=#{itemid}
+    </update>
+    <select id="getItem" resultType="com.xuandan.bgroup.common.model.entity.Item" parameterType="String">
+        select * from items where itemid=#{id}
+    </select>
+</mapper>

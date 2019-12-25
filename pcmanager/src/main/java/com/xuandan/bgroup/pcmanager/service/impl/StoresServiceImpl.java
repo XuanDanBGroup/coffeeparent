@@ -7,6 +7,7 @@ import com.xuandan.bgroup.pcmanager.service.StoresService;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * @Description
@@ -27,4 +28,31 @@ public class StoresServiceImpl implements StoresService {
        }
        return false;
     }
+
+    @Override
+    public boolean updateStores(Stores stores) {
+        if(storesDao.updateStores(stores)>1){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean delStores(int storeid) {
+        if(storesDao.delStores(storeid)>0){
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public List<Stores> showStores(String sname) {
+        return storesDao.showStores(sname);
+    }
+
+    @Override
+    public Stores selOneStore(int storeid) {
+        return storesDao.selOneStore(storeid);
+    }
+
 }

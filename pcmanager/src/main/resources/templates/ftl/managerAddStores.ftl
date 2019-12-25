@@ -86,61 +86,61 @@
 <div class="page-container">
     <!-- add class "sidebar-collapsed" to close sidebar by default, "chat-visible" to make chat appear always -->
 
-    <#include "components/left.ftl" />
+
 
     <div class="main-content">
 
         <!-- User Info, Notifications and Menu Bar -->
-        <nav class="navbar user-info-navbar" role="navigation">
+        <#--<nav class="navbar user-info-navbar" role="navigation">-->
 
-            <!-- Left links for user info navbar -->
-            <ul class="user-info-menu left-links list-inline list-unstyled">
-                <li class="hidden-sm hidden-xs">
-                    <a href="#" data-toggle="sidebar">
-                        <i class="fa-bars"></i>
-                    </a>
-                </li>
-                <li class="dropdown hover-line">
-                </li>
-                <li class="dropdown hover-line">
-                </li>
+            <#--<!-- Left links for user info navbar &ndash;&gt;-->
+            <#--<ul class="user-info-menu left-links list-inline list-unstyled">-->
+                <#--<li class="hidden-sm hidden-xs">-->
+                    <#--<a href="#" data-toggle="sidebar">-->
+                        <#--<i class="fa-bars"></i>-->
+                    <#--</a>-->
+                <#--</li>-->
+                <#--<li class="dropdown hover-line">-->
+                <#--</li>-->
+                <#--<li class="dropdown hover-line">-->
+                <#--</li>-->
 
-            </ul>
+            <#--</ul>-->
 
-            <!-- Right links for user info navbar -->
-            <ul class="user-info-menu right-links list-inline list-unstyled">
-                <li class="search-form"><!-- You can add "always-visible" to show make the search input visible -->
-                </li>
-                <li class="dropdown user-profile">
-                    <a href="#" data-toggle="dropdown">
-                        <img src="assets/images/user-4.png" alt="user-image" class="img-circle img-inline userpic-32"
-                             width="28"/>
-                        <span>
-								谁登录
-								<i class="fa-angle-down"></i>
-							</span>
-                    </a>
+            <#--<!-- Right links for user info navbar &ndash;&gt;-->
+            <#--<ul class="user-info-menu right-links list-inline list-unstyled">-->
+                <#--<li class="search-form"><!-- You can add "always-visible" to show make the search input visible &ndash;&gt;-->
+                <#--</li>-->
+                <#--<li class="dropdown user-profile">-->
+                    <#--<a href="#" data-toggle="dropdown">-->
+                        <#--<img src="assets/images/user-4.png" alt="user-image" class="img-circle img-inline userpic-32"-->
+                             <#--width="28"/>-->
+                        <#--<span>-->
+								<#--谁登录-->
+								<#--<i class="fa-angle-down"></i>-->
+							<#--</span>-->
+                    <#--</a>-->
 
-                    <ul class="dropdown-menu user-profile-menu list-unstyled">
-                        <li>
-                            <a href="javascript:;" onclick="jQuery('#updPwd').modal('show', {backdrop: 'static'});">
-                                <i class="fa-info"></i>
-                                修改密码
-                            </a>
-                        </li>
-                        <li class="last">
-                            <a href="/logOut">
-                                <i class="fa-lock"></i>
-                                退出登录
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                </li>
+                    <#--<ul class="dropdown-menu user-profile-menu list-unstyled">-->
+                        <#--<li>-->
+                            <#--<a href="javascript:;" onclick="jQuery('#updPwd').modal('show', {backdrop: 'static'});">-->
+                                <#--<i class="fa-info"></i>-->
+                                <#--修改密码-->
+                            <#--</a>-->
+                        <#--</li>-->
+                        <#--<li class="last">-->
+                            <#--<a href="/logOut">-->
+                                <#--<i class="fa-lock"></i>-->
+                                <#--退出登录-->
+                            <#--</a>-->
+                        <#--</li>-->
+                    <#--</ul>-->
+                <#--</li>-->
+                <#--<li>-->
+                <#--</li>-->
 
-            </ul>
-        </nav>
+            <#--</ul>-->
+        <#--</nav>-->
 
         <div class="page-title">
 

@@ -8,22 +8,21 @@
         <artifactId>coffeeparent</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <groupId>com.xuandan.bgroup</groupId>
+
     <artifactId>common</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <name>common</name>
     <description>Demo project for Spring Boot</description>
-
     <properties>
         <java.version>1.8</java.version>
     </properties>
-
     <dependencies>
 
-
-
     </dependencies>
+
+
+
 
 
 
